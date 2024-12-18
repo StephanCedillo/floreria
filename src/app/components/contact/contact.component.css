@@ -1,0 +1,143 @@
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  .contact-title {
+    font-family: Pincel;
+    font-size: 2.5rem;
+    color: #330606;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: center; /* Alinea los elementos en el centro */
+    gap: 20px; /* Espacio entre elementos */
+    flex-wrap: wrap; /* Permite que se ajusten en varias filas si no hay suficiente espacio horizontal */
+    margin-bottom: 40px;
+  }
+  
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contact-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .contact-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .contact-phone {
+    font-size: 1.2rem;
+    color: #000000;
+  }
+  
+  .phone-link {
+    color: #c49a9a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .phone-link:hover {
+    color: #800505;
+  }
+  
+  .contact-footer {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon img:hover {
+    transform: scale(1.1);
+  }
+/* Contenedor del botón */
+.aout-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Estilo del botón */
+  .contact-button {
+    position: relative;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(135deg, #8d57c7, #76bd76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  /* Efecto al pasar el cursor */
+  .contact-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #76bd76, #8d57c7);
+  }
+  
+  /* Efecto de brillo animado */
+  .contact-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(61, 22, 22, 0.5), transparent);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  /* Activar el efecto de luz al pasar el cursor */
+  .contact-button:hover::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Efecto adicional de luz intensa en el borde */
+  .contact-button:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(38, 198, 218, 0.4);
+  }
+  

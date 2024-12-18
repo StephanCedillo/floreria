@@ -1,0 +1,120 @@
+/* Contenedor principal para los detalles de la flor */
+.flower-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover para el contenedor principal */
+.flower-detail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Título de la flor */
+.flower-detail h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Descripción del nombre científico y demás información */
+.flower-detail p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 8px 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+/* Imagen de la flor */
+.flower-detail img {
+  max-width: 85%;
+  height: auto;
+  border-radius: 8px;
+  margin: 20px 0;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover para la imagen */
+.flower-detail img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para los botones de cantidad */
+button {
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #d8ba89;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0 10px;
+}
+
+/* Hover para los botones de cantidad */
+button:hover {
+  background-color: #d3ad8b;
+  transform: scale(1.05);
+}
+
+/* Control de cantidad */
+.flower-detail span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #34495e;
+  margin: 0 15px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor para los botones de cantidad */
+.flower-detail .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Botón de agregar al carrito */
+.flower-detail button.add-to-cart {
+  background-color: #2ecc71;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 250px;
+  margin-top: 20px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover para el botón de agregar al carrito */
+.flower-detail button.add-to-cart:hover {
+  background-color: #27ae60;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para los botones en la parte inferior */
+button:focus {
+  outline: none;
+}

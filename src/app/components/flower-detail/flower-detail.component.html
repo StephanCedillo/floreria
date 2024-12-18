@@ -1,0 +1,26 @@
+<!-- src/app/components/flower-detail/flower-detail.component.html -->
+<div class="flower-detail">
+  
+  <h2>{{ flowerSelected.common_name }}</h2>
+  <p>Nombre científico: {{ flowerSelected.scientific_name.join(', ') }}</p>
+  <p>Precio: ${{ flowerSelected.price }}</p>
+  <p>Ciclo: {{ flowerSelected.cycle }}</p>
+  <p>Nivel de agua necesario: {{ flowerSelected.watering }}</p>
+  <p>Nivel de sol necesario: {{ flowerSelected.sunlight }}</p>
+  <img [src]="flowerSelected.default_image?.medium_url" alt="{{ flowerSelected.common_name }}" />
+  <p><img [src]="flowerSelected.codeqr" alt="{{ flowerSelected.common_name }}" /></p>
+
+  <!-- Controles para la cantidad -->
+  <!-- Botones para cambiar la cantidad -->
+  <div class="button-container">
+    <button (click)="quantity = quantity > 1 ? quantity - 1 : 1">-</button>
+    <span>{{ quantity }}</span>
+    <button (click)="quantity = quantity + 1">+</button>
+  
+    <!-- Botón para agregar al carrito -->
+    <button (click)="addToCart()">Agregar al carrito</button>
+  </div>
+</div>
+
+
+

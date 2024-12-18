@@ -1,0 +1,119 @@
+@font-face {
+  font-family: Lit;
+  src: url(/Letras/Sweet.otf);
+}
+
+/* Estilo general de la barra de navegación */
+.navbar {
+    background: linear-gradient(90deg, #603ca3, #66a54f); /* Gradiente profesional */
+    box-shadow: 0px 4px 6px rgba(240, 18, 18, 0.1); /* Sombra elegante */
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px; /* Redondeo en los bordes */
+  }
+  
+  /* Lista de la navbar */
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo general de los enlaces */
+  .navbar-link {
+    font-family:Lit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #dad4d4;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Efecto hover: subrayado animado */
+  .navbar-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #000000;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+  }
+  /* Puedes agregar este CSS en el archivo de estilos de tu componente */
+.navbar-icon {
+  width: 20px; /* Ajusta el tamaño de la imagen */
+  height: 20px; /* Ajusta el tamaño de la imagen */
+  margin-right: 8px; /* Espacio entre la imagen y el texto */
+  vertical-align: middle; /* Alinea la imagen al centro con el texto */
+}
+
+  .navbar-link:hover::after {
+    width: 100%;
+  }
+  
+  .navbar-link:hover {
+    color: #619457;
+    transform: scale(1.1);
+  }
+  
+  /* Efecto activo */
+  .navbar-link.active {
+    color: #000000;
+  }
+  
+  /* Estilo de los elementos de la lista */
+  .navbar-item {
+    position: relative;
+  }
+  
+  /* Sombra decorativa al hacer hover en un elemento */
+  .navbar-item:hover {
+    box-shadow: 0px 4px 10px rgba(255, 238, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  /* Adaptación a pantallas pequeñas */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.8rem 1.5rem;
+    }
+  
+    .navbar-list {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  
+    .navbar-link {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Animación sutil para el gradiente */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .navbar {
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+  }
+  

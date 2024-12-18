@@ -1,0 +1,19 @@
+<!-- src/app/components/cart/cart.component.html -->
+<div class="cart">
+  <!-- Verifica si hay productos en el carrito -->
+  <div *ngIf="cartItems.length > 0; else noItems">
+    <ul>
+      <li *ngFor="let item of cartItems">
+        <img [src]="item.image" alt="{{ item.name }}" width="50">
+        <p>{{ item.name }}</p>
+        <p>Cantidad: {{ item.number }}</p> <!-- Cantidad acumulada -->
+        <button (click)="removeFromCart(item.id)"><img src="/assets/delete.png" alt="Eliminar" width="20" />Quitar</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Mensaje si no hay productos en el carrito -->
+  <ng-template #noItems>
+    <p>No hay productos en el carrito.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,55 @@
+/* Contenedor principal de flores */
+.flowers-container {
+  display: flex;
+  flex-wrap: wrap; /* Los elementos se envuelven en nuevas filas si es necesario */
+  gap: 20px; /* Espacio uniforme de 20px entre los elementos */
+  justify-content: space-evenly; /* Distribuye los elementos de manera uniforme */
+  margin-top: 10px;
+  width: 100%;
+  margin: 0.5em auto; /* Centra el contenedor en la pantalla */
+}
+
+/* Estilo para cada item de flor */
+app-flower-item {
+  flex: 1 1 calc(33.33% - 20px); /* Los elementos ocupan el 33.33% del contenedor menos el espacio entre ellos */
+  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
+  min-width: 250px; /* Ancho mínimo para los elementos */
+  max-width: 350px; /* Ancho máximo para los elementos */
+  height: auto; /* La altura se ajusta según el contenido */
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+  display: flex;
+  flex-direction: column; /* Alinea el contenido verticalmente */
+  justify-content: center; /* Centra contenido verticalmente */
+  align-items: center; /* Centra contenido horizontalmente */
+  margin: 0; /* Elimina márgenes adicionales */
+}
+
+/* Responsividad: en pantallas medianas, los elementos ocupan el 50% del contenedor */
+@media (max-width: 768px) {
+  .flowers-container {
+    gap: 16px; /* Ajusta el espacio entre los elementos en pantallas medianas */
+  }
+  app-flower-item {
+    flex: 1 1 calc(50% - 16px); /* En pantallas medianas, dos elementos por fila */
+  }
+}
+
+/* Responsividad para pantallas pequeñas (por ejemplo, teléfonos) */
+@media (max-width: 480px) {
+  .flowers-container {
+    gap: 12px; /* Ajusta el espacio entre los elementos en pantallas pequeñas */
+  }
+  app-flower-item {
+    flex: 1 1 100%; /* En pantallas pequeñas, un elemento por fila */
+  }
+}
+
+/* Reset de márgenes y rellenos en los elementos */
+app-flower-item * {
+  margin: 0;
+  padding: 0;
+}
+.flowers-container {
+  padding: 0;
+  margin: 0;
+}

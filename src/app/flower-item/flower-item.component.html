@@ -1,0 +1,23 @@
+<!-- app-flower-item.component.html -->
+<div class="flower-item">
+  <!-- Enlace a la página de detalle de la flor -->
+  <a [routerLink]="['/flower', flower.id]">
+    <img [src]="flower.default_image?.regular_url" alt="{{ flower.common_name }}">
+    <h3>Nombre: {{ flower.common_name }}</h3>
+    <p>Nombre científico: {{ flower.scientific_name.join(', ') }}</p>
+    <p>Nivel del agua: {{ flower.watering }}</p>
+    <p>Precio: {{ flower.price }} $</p>
+    <p><img [src]="flower.codeqr" alt="{{ flower.common_name }}"></p>
+  </a>
+
+  <!-- Contenedor para los botones de agregar y quitar del carrito -->
+  <div>
+    <button (click)="decrementQuantity()">-</button>
+    <span>{{ selectedNumber }}</span>
+    <button (click)="incrementQuantity()">+</button>
+  </div>
+  <div class="product">
+    <!-- Botón para agregar -->
+    <button (click)="addToCart()">Agregar al carrito</button>
+  </div>
+</div>
