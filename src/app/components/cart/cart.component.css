@@ -4,7 +4,6 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 100%;
   max-width: 600px;
   margin: 30px auto;
   font-family: 'Arial', sans-serif;
@@ -51,6 +50,8 @@ li img {
   border-radius: 8px;
   object-fit: cover;
   margin-right: 15px;
+  max-width: 50px; /* Asegura que las imágenes no sean demasiado grandes */
+  height: auto;
 }
 
 /* Estilo para los textos del producto */
@@ -101,4 +102,37 @@ li p:first-child {
   color: #999;
   text-align: center;
   margin-top: 40px;
+}
+
+/* Responsividad para pantallas pequeñas (375px o menos) */
+@media (max-width: 375px) {
+  /* Ajustar el contenedor del carrito */
+  .cart {
+    padding: 10px; /* Reducir el padding */
+    margin: 10px auto; /* Reducir márgenes */
+    max-width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  }
+
+  /* Ajustar el encabezado */
+  .cart h2 {
+    font-size: 1.4rem; /* Reducir el tamaño del encabezado */
+  }
+
+  /* Ajustar la imagen de los productos */
+  li img {
+    max-width: 40px; /* Reducir el tamaño de la imagen */
+    margin-right: 10px; /* Ajustar el margen */
+  }
+
+  /* Ajustar el tamaño de la fuente de los productos */
+  li p {
+    font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+  }
+
+  /* Ajustar el botón 'Quitar' */
+  button {
+    width: 100%; /* El botón ocupará el 100% del ancho */
+    padding: 10px;
+    font-size: 1.1rem; /* Ajustar el tamaño de la fuente */
+  }
 }

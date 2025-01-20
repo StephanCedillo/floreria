@@ -1,62 +1,13 @@
-@font-face {
-    font-family: TIT;
-    src: url(/Letras/Plants.otf);
-  }
-  @font-face {
-    font-family: Text;
-    src: url(/Letras/Text.ttf);
-  }
-  @font-face {
-    font-family: Os;
-    src: url(/Letras/Hand.ttf);
-  }
-  @font-face {
-    font-family: Pep;
-    src: url(/Letras/Sec.ttf);
-  }
 /* General Styles */
 body {
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna y profesional */
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #c7886a;
+    background-color: #f4f4f4; /* Color más suave para el fondo */
 }
 
-h1, h2, h3 {
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-/* Estilo para el botón */
-.contact-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #e74c3c; /* Rojo vibrante */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-  
-  .contact-button:hover {
-    background-color: #c0392b; /* Rojo más oscuro */
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .contact-button:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
 /* Hero Section */
 .PRIN {
     background-image: url('https://source.unsplash.com/featured/?flowers');
@@ -66,147 +17,122 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e2e2e2;
+    color: #fff; /* Blanco para mayor contraste */
     position: relative;
     text-align: center;
-    box-shadow: inset 0 0 100px rgba(2, 54, 19, 0.7);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
     overflow: hidden;
-    border-radius: 20px; /* Redondeo en los bordes */
+    border-radius: 10px; /* Borde más redondeado */
 }
 
-.hero .overlay {
-    background-color: rgba(64, 38, 99, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    animation: fadeIn 2s ease-in-out;
-}
-
+/* Hero Text */
 .hero h1 {
-    font-family: Pep;
-    font-size: 3rem;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-family: 'Pep', sans-serif;
+    font-size: 2.5rem; /* Menor tamaño para mayor claridad */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra más suave */
 }
 
 .hero p {
-    
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
     color: #f9f9f9;
+    margin-bottom: 20px;
 }
 
+/* CTA Button */
 .cta {
-    display: inline-block;
-    padding: 15px 30px;
-    background: linear-gradient(45deg, #ff6b6b, #ff3b3b);
+    padding: 12px 25px;
+    background-color: #ff6b6b;
+    color: #fff;
     border-radius: 30px;
     font-size: 1rem;
-    color: #c7886a;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.5);
+    box-shadow: none; /* Sin sombra */
 }
 
 .cta:hover {
-    background: linear-gradient(45deg, #ff3b3b, #ff6b6b);
-    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.7);
+    background-color: #ff3b3b;
     transform: translateY(-3px);
 }
 
 /* About Section */
 .about {
-    font-family: Os;
-    padding: 60px 20px;
+    padding: 50px 20px;
     text-align: center;
-    color: #444;
-    box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out;
-    border-radius: 20px 20px 0 0;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    border-radius: 10px;
 }
 
 .about h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
     color: #ff6b6b;
 }
 
 .about p {
     max-width: 700px;
     margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Productos Section */
 .productos {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #fff; /* Fondo blanco para una mejor apariencia minimalista */
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra suave y sutil */
 }
 
 .card img {
     max-width: 100%;
-    border-radius: 15px;
+    border-radius: 8px;
     margin-bottom: 15px;
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
 .footer {
-    background: linear-gradient(90deg, #311761, #144103); /* Gradiente profesional */
-    box-shadow: 0px 4px 6px rgba(240, 18, 18, 0.1); /* Sombra elegante */
-    z-index: 1000;
-    border-radius: 20px;
+    background-color: #333; /* Fondo oscuro para contraste */
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
     font-size: 0.9rem;
-    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Keyframes for animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    box-shadow: none; /* Sin sombra */
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
-    }
-    .hero p {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
     .cta {
         padding: 10px 20px;
-        font-size: 0.9rem;
+        font-size: 1rem;
+    }
+    .about h2 {
+        font-size: 1.8rem;
+    }
+    .card {
+        padding: 15px;
     }
 }
