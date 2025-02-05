@@ -1,5 +1,14 @@
 //src/app/app.component.ts
 import { Component } from '@angular/core';
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenu,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FlowerItemComponent } from './flower-item/flower-item.component';
@@ -8,9 +17,18 @@ import { FlowerDetailComponent } from './components/flower-detail/flower-detail.
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,NavbarComponent,FlowerItemComponent,CartComponent,FlowerDetailComponent],
+  imports: [RouterOutlet,NavbarComponent,FlowerItemComponent,CartComponent,FlowerDetailComponent,  IonButtons,
+    IonContent,
+    IonHeader,
+    IonMenu,
+    IonMenuButton,
+    IonTitle,
+    IonToolbar,],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  standalone:true,
+
+ 
 })
 export class AppComponent {
   title = 'myapp';

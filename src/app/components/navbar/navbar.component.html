@@ -1,26 +1,28 @@
 <!-- src/app/components/navbar/navbar.component.html -->
-
-<nav class="navbar">
-  <ul class="navbar-list">
-    <li class="navbar-item">
-      <a routerLink="/" routerLinkActive="active" class="navbar-link">
-        <img src="/assets/House.png" alt="Inicio" class="navbar-icon"> Inicio
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a routerLink="/productos" routerLinkActive="active" class="navbar-link">
-        <img src="/assets/Flor.png" alt="Productos" class="navbar-icon"> Lista de Productos
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a routerLink="/cart" routerLinkActive="active" class="navbar-link">
-        <img src="/assets/Carrito.png" alt="Carrito" class="navbar-icon"> Carrito
-      </a>
-    </li>
-    <li class="navbar-item">
-      <a routerLink="/contactos" routerLinkActive="active" class="navbar-link">
-        <img src="/assets/Cont.png" alt="Contactos" class="navbar-icon"> Contactos
-      </a>
-    </li>
-  </ul>
-</nav>
+<ion-menu contentId="main-content" class="custom-menu">
+  <ion-header>
+    <ion-toolbar class="menu-header">
+      <ion-title>Menu Contenido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ul class="menu-list">
+      <li *ngFor="let item of menuItems">
+        <a [routerLink]="item.path" class="menu-link">{{ item.title }}</a>
+      </li>
+    </ul>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <router-outlet></router-outlet>
+  </ion-content>
+</div>

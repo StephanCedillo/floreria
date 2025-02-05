@@ -1,19 +1,55 @@
 <!-- src/app/components/cart/cart.component.html -->
-<div class="cart">
+<div class="cart" class="container">
   <!-- Verifica si hay productos en el carrito -->
-  <div *ngIf="cartItems.length > 0; else noItems">
+  <div class="Header">
+    <h1>Tu Carrito de Compras</h1>
+  </div>
+  <ng-container class="Content" *ngIf="cartItems.length > 0; else noItems">
     <ul>
       <li *ngFor="let item of cartItems">
         <img [src]="item.image" alt="{{ item.name }}" width="50">
         <p>{{ item.name }}</p>
-        <p>Cantidad: {{ item.number }}</p> <!-- Cantidad acumulada -->
-        <button (click)="removeFromCart(item.id)"><img src="/assets/delete.png" alt="Eliminar" width="20" />Quitar</button>
+        <p>Precio total: {{ (item.price * item.number) | number: '1.2-2' }}</p>        <button (click)="removeFromCart(item.id)">
+          <img src="/assets/delete.png" alt="Eliminar" width="20" />Quitar
+        </button>
       </li>
     </ul>
-  </div>
-
+  </ng-container>
+  
   <!-- Mensaje si no hay productos en el carrito -->
   <ng-template #noItems>
     <p>No hay productos en el carrito.</p>
   </ng-template>
+  <!-- footer.component.html -->
+<div class="footer">
+  <!-- Burbuja de efecto -->
+  <div class="bubbles">
+    <div *ngFor="let bubble of bubbles; let idx = index" 
+         class="bubble" 
+         [style.--size]="bubble.size + 'rem'"
+         [style.--distance]="bubble.distance + 'rem'"
+         [style.--position]="bubble.position + '%'"
+         [style.--time]="bubble.time + 's'"
+         [style.--delay]="bubble.delay + 's'">
+    </div>
+  </div>
+
+  <!-- footer.component.html -->
+<div class="footer">
+  <!-- Contenido del footer -->
+  <div class="content">
+    <div class="section">
+      <b>Gracias por tu compra 🛒❤️</b>
+      <b>Envío por helicoptéro gay, muchas gracias 🏳️‍🌈😘
+      </b>
+    </div>
+    <div>
+      <a class="image" href="https://codepen.io/z-" target="_blank"
+         style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg')">
+      </a>
+    </div>
+  </div>
+</div>
+
+
 </div>

@@ -16,9 +16,10 @@ export class FlowersService {
   getFlowers(): IFlower[] {
     return this.listaFlores.map(flower => ({
       ...flower,
-      quantity: flower.quantity ?? 0  // Si quantity es undefined, la inicializa a 0
+      quantity: flower.quantity !== undefined && flower.quantity !== null ? flower.quantity : 0  // Aseguramos que quantity sea un número
     }));
   }
+  
 
   // Método para obtener una flor por su ID
   getFlowerById(id: number): IFlower {

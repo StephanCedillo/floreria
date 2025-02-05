@@ -1,108 +1,44 @@
-@font-face {
-  font-family: Lit;
-  src: url(/Letras/Sweet.otf);
-
+/* Estilo general para el menú */
+.ion-page {
+  background: #f4f4f4; /* Fondo claro */
 }
 
-/* Estilo general de la barra de navegación */
-.navbar {
-  background: linear-gradient(90deg, #d8cda3, #218a49); /* Gradiente con los colores preferidos */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Centrado vertical */
-  border-radius: 20px; /* Redondeo en los bordes */
-  animation: gradient 6s ease infinite; /* Animación fluida */
+/* Encabezado del menú */
+.menu-header {
+  background-color: #007bff; /* Azul eléctrico */
+  color: #333;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px 0;
 }
 
-/* Lista de la navbar */
-.navbar-list {
+/* Lista de elementos del menú */
+.menu-list {
   list-style: none;
-  display: flex;
-  flex-wrap: nowrap; /* Mantén la disposición horizontal */
-  gap: 2rem;
-  margin: 0;
   padding: 0;
-  align-items: center;
+  margin: 0;
 }
 
-/* Estilo general de los enlaces */
-.navbar-link {
-  font-family: Lit, sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
+/* Elementos individuales del menú */
+.menu-list li {
+  margin: 10px 0;
+}
+
+/* Enlaces del menú */
+.menu-link {
+  display: block;
+  padding: 10px 20px;
   text-decoration: none;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  border-radius: 12px;
-}
-
-/* Iconos de navegación */
-.navbar-icon {
-  width: 24px; /* Tamaño adaptativo */
-  height: 24px;
-  margin-right: 8px;
-}
-
-/* Efecto hover */
-.navbar-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffff88;
-  transform: scale(1.05);
-}
-
-/* Subrayado animado */
-.navbar-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0%;
-  height: 2px;
-  background-color: #ffffff;
-  transition: all 0.3s ease-in-out;
-  transform: translateX(-50%);
-}
-
-.navbar-link:hover::after {
-  width: 100%;
-}
-
-/* Estado activo */
-.navbar-link.active {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #ffff00;
-}
-
-/* Estilo de los elementos de la lista */
-.navbar-item {
-  position: relative;
-}
-
-/* Sombra al hacer hover en un elemento */
-.navbar-item:hover {
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
   border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Adaptación a pantallas pequeñas */
-@media (max-width: 768px) {
-  .navbar-list {
-    font-size: 0.5rem;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
-    justify-content: center;
-    gap: 1rem; /* Ajusta el espacio entre los elementos */
-  }
-
-  .navbar-link {
-    font-size: 1rem;
-  }
+/* Efecto hover para los enlaces */
+.menu-link:hover {
+  background-color: #5c8b6b; /* Azul eléctrico */
+  color: #333;
 }

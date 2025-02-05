@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CartService {
-  private cart: { image: string; number: number; id: number; name: string }[] = [];
+  private cart: { image: string; number: number; id: number; name: string ; price: number}[] = [];
   private cartItems: any[] = [];
-  addProductToCart(product: { image: string; number: number; id: number; name: string }): void {
+  addProductToCart(product: { image: string; number: number; id: number; name: string ; price: number}): void {
     const existingProduct = this.cartItems.find(item => item.id === product.id);
     if (existingProduct) {
       existingProduct.number += product.number;

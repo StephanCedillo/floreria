@@ -46,6 +46,7 @@ export class FlowerDetailComponent implements OnInit {
       number: this.quantity, // Asegúrate de que esta cantidad dinámica sea mayor que 0
       id: this.flowerSelected.id,
       name: this.flowerSelected.common_name,
+      price: this.flowerSelected.price
     });
   
     console.log('Producto agregado al carrito:', this.flowerSelected, 'Cantidad:', this.quantity);

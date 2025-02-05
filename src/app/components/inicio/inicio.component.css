@@ -1,138 +1,89 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4; /* Color más suave para el fondo */
-}
+/* src/app/components/inicio/inicio.component.css */
 
-/* Hero Section */
-.PRIN {
-    background-image: url('https://source.unsplash.com/featured/?flowers');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+/* Estilo para el contenedor principal */
+.container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff; /* Blanco para mayor contraste */
-    position: relative;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    padding: 0 16px;
+  }
+  
+  /* Estilo para el ion-card */
+  ion-card {
+    width: 100%; /* Hace que el card ocupe el 100% del ancho disponible */
+    max-width: 600px; /* Limita el tamaño máximo del card */
+    margin: 20px auto; /* Centra el card y le da un margen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilo para las imágenes dentro del card */
+  ion-card img {
+    height: 30vh;
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho del card */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados solo en la parte superior */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+  }
+  
+  /* Estilo para el contenido del card */
+  ion-card-header {
+    background-color: #f4f4f4; /* Fondo claro para el header */
+    padding: 10px 16px; /* Espaciado interno */
     text-align: center;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
-    overflow: hidden;
-    border-radius: 10px; /* Borde más redondeado */
-}
-
-/* Hero Text */
-.hero h1 {
-    font-family: 'Pep', sans-serif;
-    font-size: 2.5rem; /* Menor tamaño para mayor claridad */
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra más suave */
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #f9f9f9;
-    margin-bottom: 20px;
-}
-
-/* CTA Button */
-.cta {
-    padding: 12px 25px;
-    background-color: #ff6b6b;
-    color: #fff;
-    border-radius: 30px;
-    font-size: 1rem;
+  }
+  
+  ion-card-title {
+    font-size: 1.6rem; /* Tamaño de fuente más grande para el título */
     font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: none; /* Sin sombra */
-}
-
-.cta:hover {
-    background-color: #ff3b3b;
-    transform: translateY(-3px);
-}
-
-/* About Section */
-.about {
-    padding: 50px 20px;
-    text-align: center;
-    color: #333;
-    background-color: #fff;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
-    border-radius: 10px;
-}
-
-.about h2 {
-    font-size: 2rem;
-    color: #ff6b6b;
-}
-
-.about p {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Productos Section */
-.productos {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fff; /* Fondo blanco para una mejor apariencia minimalista */
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra suave y sutil */
-}
-
-.card img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Footer */
-.footer {
-    background-color: #333; /* Fondo oscuro para contraste */
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    box-shadow: none; /* Sin sombra */
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
+  }
+  
+  ion-card-subtitle {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para el subtítulo */
+    color: #888;
+  }
+  
+  /* Estilo para el contenido del card */
+  ion-card-content {
+    padding: 16px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+    color: #333; /* Color de texto */
+  }
+  
+  /* Estilo para el footer */
+  .footer {
+    background-color: #311761; /* Fondo del footer */
+    color: white; /* Color de texto blanco */
+    text-align: center; /* Centrado del texto */
+    padding: 10px 0; /* Espaciado vertical */
+    margin-top: auto; /* Empuja el footer hacia abajo */
+  }
+  
+  /* Responsividad para pantallas pequeñas */
+  @media (max-width: 600px) {
+    ion-card {
+      max-width: 100%; /* El card ocupará el 100% del ancho en pantallas pequeñas */
+      margin: 10px; /* Ajusta el margen */
     }
-    .cta {
-        padding: 10px 20px;
-        font-size: 1rem;
+  
+    ion-card-header {
+      padding: 8px 12px; /* Menos padding en pantallas pequeñas */
     }
-    .about h2 {
-        font-size: 1.8rem;
+  
+    ion-card-title {
+      font-size: 1.4rem; /* Ajusta el tamaño del título */
     }
-    .card {
-        padding: 15px;
+  
+    ion-card-subtitle {
+      font-size: 1rem; /* Ajusta el tamaño del subtítulo */
     }
-}
+  
+    ion-card-content {
+      font-size: 0.9rem; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    }
+  
+    .footer {
+      font-size: 0.8rem; /* Reduce el tamaño de la fuente en el footer */
+      padding: 8px 0; /* Reduce el padding del footer */
+    }
+  }
+  

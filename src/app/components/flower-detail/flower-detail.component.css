@@ -60,7 +60,7 @@ button {
   padding: 8px 16px;
   font-size: 1.2rem;
   border: none;
-  background-color: #d8ba89;
+  background-color: #5c8b6b;
   color: white;
   cursor: pointer;
   border-radius: 6px;
@@ -117,4 +117,109 @@ button:hover {
 /* Estilo para los botones en la parte inferior */
 button:focus {
   outline: none;
+}
+/* Media Query para pantallas de tamaño pequeño (móviles y tablets) */
+@media (max-width: 768px) {
+
+  /* Contenedor principal */
+  .flower-detail {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  /* Título */
+  .flower-detail h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  /* Descripción */
+  .flower-detail p {
+    font-size: 1rem;
+    margin: 6px 0;
+  }
+
+  /* Imagen de la flor */
+  .flower-detail img {
+    max-width: 100%;
+    margin: 15px 0;
+  }
+
+  /* Estilo para los botones de cantidad */
+  button {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  /* Control de cantidad */
+  .flower-detail span {
+    font-size: 1.1rem;
+    margin: 0 12px;
+  }
+
+  /* Contenedor para los botones de cantidad */
+  .flower-detail .button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Botón de agregar al carrito */
+  .flower-detail button.add-to-cart {
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    max-width: 220px;
+    margin-top: 15px;
+  }
+}
+
+/* Media Query para pantallas más pequeñas (móviles en modo retrato) */
+@media (max-width: 480px) {
+
+  /* Contenedor principal */
+  .flower-detail {
+    padding: 10px;
+  }
+
+  /* Título */
+  .flower-detail h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Descripción */
+  .flower-detail p {
+    font-size: 0.9rem;
+  }
+
+  /* Imagen de la flor */
+  .flower-detail img {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Estilo para los botones de cantidad */
+  button {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  /* Control de cantidad */
+  .flower-detail span {
+    font-size: 1rem;
+    margin: 0 8px;
+  }
+
+  /* Contenedor para los botones de cantidad */
+  .flower-detail .button-container {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  /* Botón de agregar al carrito */
+  .flower-detail button.add-to-cart {
+    font-size: 0.9rem;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
 }

@@ -136,3 +136,319 @@ li p:first-child {
     font-size: 1.1rem; /* Ajustar el tamaño de la fuente */
   }
 }
+.container {  
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 0.4fr 2.2fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Header Header"
+    "Content Content"
+    "footer footer";
+}
+
+.Header { grid-area: Header; }
+
+.Content { grid-area: Content; }
+
+.footer { grid-area: footer; }
+/* Grid layout de la página */
+.container {
+  display: grid;
+  grid-template-columns: 2fr ; /* Dos columnas */
+  grid-template-rows: 0.4fr 2.2fr 0.4fr; /* Tres filas: Header, Content y Footer */
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Header Header"    /* El Header ocupa toda la primera fila */
+    "Content Content"  /* El Content ocupa toda la segunda fila */
+    "footer footer";   /* El Footer ocupa toda la tercera fila */
+}
+
+/* Estilos para el header */
+.Header {
+  grid-area: Header;
+  background: linear-gradient(135deg, #5c8b6b, #81a58c); /* Fondo con gradiente */
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 0 0 20px 20px; /* Esquinas redondeadas */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  position: relative;
+}
+
+.Header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-out;
+}
+
+.Header p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0.8;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Animación de desvanecimiento para los elementos */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilos para el contenido del carrito */
+.Content {
+  grid-area: Content;
+  padding: 30px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.Content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Content li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.Content img {
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.Content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Botón de eliminar */
+.Content button {
+  background-color: #f44336; /* Rojo */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.Content button:hover {
+  background-color: #d32f2f;
+}
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.15rem;
+  background: var(--footer-background);
+  filter: url("#blob");
+}
+
+.bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: var(--footer-background);
+  border-radius: 100%;
+  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+            bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  transform: translate(-30%, 80%);
+}
+
+.content a, .content p {
+  color: #F5F7FA;
+  text-decoration: none;
+}
+
+.content p {
+  margin: 0;
+  font-size: .75rem;
+}
+
+.content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content .image {
+  align-self: center;
+  width: 3rem;  /* Reducimos el tamaño de la imagen */
+  height: 3rem; /* Reducimos el tamaño de la imagen */
+  margin-top: 0.5rem;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 3rem);
+    height: var(--size, 1.5rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@keyframes bubble-move {
+  0% {
+    bottom: -3rem;
+  }
+  100% {
+    bottom: var(--distance, 3rem);
+  }
+}
+
+/* footer.component.css */
+.footer {
+  z-index: 1;
+  --footer-background: #5c8b6b;
+  display: grid;
+  position: fixed;  /* Cambiado a 'fixed' */
+  bottom: 0;  /* Fijo en la parte inferior */
+  left: 0;
+  right: 0;
+  height: 3rem;  /* Ajuste de altura */
+  background: var(--footer-background);
+}
+
+.content {
+  z-index: 2;
+  display: grid;
+  padding: 0.5rem;  /* Ajuste en el espacio */
+  background: var(--footer-background);
+  text-align: center; /* Centrado */
+}
+
+.content b {
+  color: white;
+  font-size: 1rem;
+}
+
+.content .image {
+  align-self: center;
+  width: 3rem;  /* Tamaño de la imagen */
+  height: 3rem; /* Tamaño de la imagen */
+  margin-top: 0.5rem;
+  background-size: cover;
+  background-position: center;
+}
+/* Asegura que el contenedor del carrito ocupe todo el ancho */
+.Content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width:100%;  /* Esto asegura que ocupe todo el ancho disponible */ /* Remueve restricciones de max-width */
+}
+
+/* Asegura que los elementos de la lista ocupen todo el ancho disponible */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Los elementos estarán en una columna */
+  width: 100%; /* Ocupar todo el ancho */
+}
+
+/* Estilo para cada ítem dentro de la lista */
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  width: 100%; /* Ocupar todo el ancho disponible */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto de hover para cada ítem */
+ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la imagen de cada producto */
+ul li img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+/* Estilo para los textos de cada producto */
+ul li p {
+  flex-grow: 1;
+  color: #333;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Estilo para el precio total */
+ul li p:nth-child(2) {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Estilo para el botón de eliminar */
+ul li button {
+  display: flex;
+  align-items: center;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para el ícono dentro del botón */
+ul li button img {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Efecto de hover en el botón de eliminar */
+ul li button:hover {
+  background-color: #ff3333;
+}
+
+/* Mensaje si no hay productos en el carrito */
+.no-items-message {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  padding: 20px;
+}

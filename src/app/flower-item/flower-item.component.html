@@ -1,23 +1,91 @@
 <!-- app-flower-item.component.html -->
 <div class="flower-item">
   <!-- Enlace a la página de detalle de la flor -->
-  <a [routerLink]="['/flower', flower.id]">
-    <img [src]="flower.default_image?.regular_url" alt="{{ flower.common_name }}">
-    <h3>Nombre: {{ flower.common_name }}</h3>
-    <p>Nombre científico: {{ flower.scientific_name.join(', ') }}</p>
-    <p>Nivel del agua: {{ flower.watering }}</p>
-    <p>Precio: {{ flower.price }} $</p>
-    <p><img [src]="flower.codeqr" alt="{{ flower.common_name }}"></p>
+  <a [routerLink]="['/flower', flower.id]" class="flower-item">
+    <!-- From Uiverse.io by KSAplay --> 
+  <div class="card">
+  <img class="img-section" [src]="flower.default_image?.regular_url" alt="{{ flower.common_name }}">
+  <section class="content-section">
+    <div class="weather-info">
+      <div class="left-side">
+      </div>
+      <div class="right-side">
+        <div class="location">
+          <div>
+            <span>{{ flower.common_name }}</span>
+          </div>
+        </div>
+        <p class="Price">$ {{ flower.price }}  </p>
+      </div>
+    </div>
+    <div class="forecast">
+      <div class="separator"></div>
+      <div>
+        <p class="Price">Precio: ${{ flower.price }}  </p>      
+      </div>
+      <div class="separator"></div>
+      <div>
+        <p>Nombre Cientifico:{{ flower.scientific_name.join(', ') }}</p>
+      </div>
+      <div class="separator"></div>
+      <div>
+        <p>Nivel del agua: {{ flower.watering }}</p>
+      </div>
+    </div>
+  </section>
+  
+</div>
   </a>
+  <div class="quantity-container">
+    <!-- Botón de decremento con el ícono de '-' y círculo rojo -->
+    <button class="decrement-button" (click)="decrementQuantity()" title="Decrement">
+      <div class="button-circle">
+        <svg
+          class="decrement-button-icon"
+          viewBox="0 0 24 24"
+          height="20px"
+          width="20px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-width="1.5"
+            d="M8 12H16" 
+          ></path>
+        </svg>
+      </div>
+    </button>
+    
+    <!-- Número de cantidad -->
+    <span class="quantity-number">{{ selectedNumber }}</span>
+    
+    <!-- Botón de incremento con el ícono de '+' -->
+    <button class="add-button" title="Add New" (click)="incrementQuantity()">
+      <div class="button-circle">
+        <svg
+          class="add-button-icon"
+          viewBox="0 0 24 24"
+          height="20px"
+          width="20px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-width="1.5"
+            d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+          ></path>
+          <path stroke-width="1.5" d="M8 12H16"></path>
+          <path stroke-width="1.5" d="M12 16V8"></path>
+        </svg>
+      </div>
+    </button>
+  </div>
+  
+  
 
-  <!-- Contenedor para los botones de agregar y quitar del carrito -->
-  <div>
-    <button (click)="decrementQuantity()">-</button>
-    <span>{{ selectedNumber }}</span>
-    <button (click)="incrementQuantity()">+</button>
-  </div>
-  <div class="product">
-    <!-- Botón para agregar -->
-    <button (click)="addToCart()">Agregar al carrito</button>
-  </div>
+
+
+
+<button class="button" type="button" (click)="addToCart()">
+  <span class="button__text">Carrito</span>
+  <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></span>
+</button>
 </div>

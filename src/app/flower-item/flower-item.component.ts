@@ -46,6 +46,7 @@ export class FlowerItemComponent {
         number: this.selectedNumber,
         id: this.flower.id,
         name: this.flower.common_name,
+        price: this.flower.price
       });
   
       console.log('Agregado al carrito:', this.flower.common_name, 'Cantidad:', this.selectedNumber);
